@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: rgb(187, 187, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Layout */
+main{
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+}
+main aside{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(255, 192, 203, 0.963) 40%,rgba(255, 192, 203, 0.699),rgba(1, 103, 246, 0.886) 70%,rgba(0, 85, 255, 0.991) 100%), url(/vertical\ line.jpeg);
+    box-shadow: inset 1px 3px 10px rgb(255, 245, 245);
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border: 1px solid black;
+}
+main aside button{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    position: relative;
+    box-shadow: inset 0 0 3px 6px pink,
+    0 0 0px 3px rgba(0, 0, 0, 0.573);
+}
+
+main section{
+    background: rgb(228, 229, 241);
+    box-shadow:10px 3px 10px rgba(0, 0, 0, 0.425),
+    inset -2px -3px 1px rgba(0, 0, 0, 0.447);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    overflow: hidden;
+    border: 1px solid black;
+}
+main section .head{
+    display: flex;
+    padding: 10px 30px;
+    background: blue;
+    box-shadow: inset 0px 2px 10px rgb(255, 255, 255),
+    inset 0px -2px 10px rgba(0, 0, 0, 0.831),
+    0px 1px 5px rgba(15, 4, 4, 0.758);
+}
+section .main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+.main #top{
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+.main #upcoming-task, .main #completed-task{
+    flex-basis: 44%;
+    border-radius: 10px;
+}
+.main #upcoming-task #upcome, .main #completed-task #completed{
+    height: 100%;
+    background: #ffbdbd;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow:5px 1px 13px rgba(0, 0, 0, 0.767),
+    0px -3px 13px rgb(255, 255, 255),
+    inset 2px 1px 10px white;
+}
+.main #add-task{
+    margin-top: 30px;
+    background: #000;
+    height: 36%;
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow:5px 1px 13px rgba(0, 0, 0, 0.767),
+    0px -3px 13px rgb(255, 255, 255),
+    inset 2px 1px 10px white;
+    border: 1px solid rgb(45, 53, 60);
+}
+.main #add-task h1{
+    background: rgb(255, 177, 177);
+    padding: 10px 20px;
+}
+.main #add-task #add{
+    height: 100%;
+    background: #e5dcdc;
+}

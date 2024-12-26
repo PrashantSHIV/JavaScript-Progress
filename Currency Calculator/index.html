@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Currency Calculator</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="converter">
+            <div class="Currency">
+                <h3>From</h3>
+                <img src="https://flagsapi.com/US/flat/64.png">
+                <select name="from" id="f_curr">
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+            <div class="Currency">
+                <h3>To</h3>
+                <img src="https://flagsapi.com/IN/flat/64.png">
+                <select name="to" id="to_curr">
+                    <option value="INR">INR</option>
+                </select>
+            </div>
+        </div>
+        <h3>Result: <span id="from"></span>   <span id="to"></span></h3>
+        <button>Convert</button>
+    </div>
+    <script src="code.js"></script>  <!-- It is important that this file should loaded first -->
+    <script src="app.js"></script>
+</body>
+</html>
