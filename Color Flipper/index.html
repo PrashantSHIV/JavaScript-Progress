@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Flipper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>Color Flipper</h2>
+            <ul>
+                <li class="active">Simple</li>
+                <li onclick="window.location.href='hex.html' ">Hex</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="colorArea">
+            Background Color:     <span id="color">White</span>
+        </div>
+        <button>Click Me</button>
+    </main>
+
+    <script>
+        let bg = ['Red', 'Green', '#F1f5f3', 'Rgba(0,50,0,0.9)','#167288', '#8cdaec', '#b45248', '#d48c84', '#a89a49', '#d6cfa2', '#3cb464', '#9bddb1', '#643c6a', '#836394'];
+
+        let color = document.querySelector('#color');
+        let button = document.querySelector('button');
+
+        button.addEventListener('click',() =>{
+            let choose = getRandom();
+            document.body.style.background = bg[choose];
+            color.textContent = bg[choose];
+        })
+
+        function getRandom(){
+            return Math.floor(Math.random()*bg.length);
+        }
+
+    </script>
+</body>
+</html>

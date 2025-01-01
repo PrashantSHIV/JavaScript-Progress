@@ -44,6 +44,6 @@ document.querySelector("button").onclick = async (e) => {
     let data = await response.json().then((result) => {
         return result;
     })
-    document.querySelector("#from").innerText = 1 + "       ";
+    document.querySelector("#from").innerText = 1;
     document.querySelector("#to").innerText = data[fCurr][toCurr];
 }

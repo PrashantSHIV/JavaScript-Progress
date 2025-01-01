@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: rgb(165, 165, 228);
+        }
+        section{
+            display: grid;
+            place-content: center;
+            gap: 20px;
+        }
+        h2{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        h1{
+            font-size: 34px;
+        }
+        .buttons{
+            display: flex;
+            gap: 10px;
+        }
+        button{
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>Counter</h2>
+        <h1>0</h1>
+        <div class="buttons">
+            <button class="decre">DECREASES</button>
+            <button>RESET</button>
+            <button class="incre">INCREASES</button>
+        </div>
+    </section>
+
+    <script>
+        let count = 0;
+        let counter = document.querySelector('h1');
+        let buttons = document.querySelectorAll('button')
+
+        buttons.forEach(btn => {
+            let intervalId;
+
+            btn.onmouseenter = () =>{
+                intervalId = setInterval(()=> {
+                    let button = btn.classList;
+
+                    if(button.contains('decre')){
+                        count--;
+                    }
+                    else if(button.contains('incre')){
+                        count++;
+                    }
+                    else{
+                        count = 0;
+                    }
+
+                    if(count > 0) counter.style.color = 'green';
+                    else if(count < 0) counter.style.color = 'red';
+                    else counter.style.color = '#222'
+                    counter.innerText = count;
+                }, 1000);
+            }
+
+            btn.onmouseleave = () => {
+                clearInterval(intervalId);
+            }
+        })
+
+    </script>
+</body>
+</html>
+
+
+<!-- 
+        let count = 0;
+        let counter = document.querySelector('h1');
+        let buttons = document.querySelectorAll('button')
+        console.log(buttons[0].classList)
+
+        buttons.forEach(btn => {
+            btn.onclick = () =>{
+                let button = btn.classList;
+
+                if(button.contains('decre')){
+                    count--;
+                }
+                else if(button.contains('incre')){
+                    count++;
+                }
+                else{
+                    count = 0;
+                }
+
+                if(count > 0) counter.style.color = 'green';
+                else if(count < 0) counter.style.color = 'red';
+                else counter.style.color = '#222'
+                counter.innerText = count;
+            }
+        })
+ -->
